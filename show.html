@@ -6,12 +6,25 @@
 </head>
 <body>
 	<div id="lesson-doubleBind">
-		<h2>{{ message }}</h2>
+		<h2>Lesson 1 double bind</h2>
+		<h4>{{ message }}</h4>
 		<input type="text" v-model="message">
 		<pre>
-			{{ $data | json}}	
+			{{ $data | json }}	
 		</pre>
 		
+	</div>
+
+	<div id="lesson-dataHideByVShow">
+		<h2>Lesson 2 data hiden v-show</h2>
+		<h4 v-show="!message" style="color: red">
+			请输入内容
+		</h4>
+		<textarea v-model="message"></textarea>
+		<button>send message</button>
+		<pre>
+			{{ $data | json }}
+		</pre>
 	</div>
 
 	<script src="vue.min.js"></script>
@@ -19,9 +32,16 @@
 		new Vue({
 			el:'#lesson-doubleBind',
 			data: {
-				message:"hello world"
+				message:'hello world'
 			}
 			
+		});
+
+		new Vue({
+			el:'#lesson-dataHideByVShow',
+			data: {
+				message:'dfa'
+			}
 		});
 		
 	</script>
