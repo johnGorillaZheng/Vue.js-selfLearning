@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>我的vue自学代码集</title>
+</head>
+<body>
+	<div id="lesson-doubleBind">
+		<h2>{{ message }}</h2>
+		<input type="text" v-model="message">
+		<pre>
+			{{ $data | json}}	
+		</pre>
+		
+	</div>
+
+	<script src="vue.min.js"></script>
+	<script>
+		new Vue({
+			el:'#lesson-doubleBind',
+			data: {
+				message:"hello world"
+			}
+			
+		});
+		
+	</script>
+
+</body>
+</html>
