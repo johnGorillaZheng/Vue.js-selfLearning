@@ -5,6 +5,7 @@
 	<title>我的vue自学代码集</title>
 </head>
 <body>
+
 	<div id="lesson-doubleBind">
 		<h2>Lesson 1 double bind</h2>
 		<h4>{{ message }}</h4>
@@ -27,6 +28,12 @@
 		</pre>
 	</div>
 
+	<div id="lesson-form">
+		<h2>Lesson 3 form</h2>
+		<form action="demo.html" @submit="submitForm">
+			<button type="submit" @click="updateCount">submit{{count}}</button>
+		</form>
+	</div>
 	<script src="vue.min.js"></script>
 	<script>
 		new Vue({
@@ -42,6 +49,22 @@
 			data: {
 				message:'dfa'
 			}
+		});
+		
+		new Vue({
+			el:'#lesson-form',
+			data : {
+				count:0
+			},
+			methods: {
+				updateCount : function() {
+					this.count ++;
+				},
+				submitForm : function(e) {
+					e.preventDefault();
+				}
+
+ 			}
 		});
 		
 	</script>
